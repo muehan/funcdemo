@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "index": {
+            "matchCondition": {
+                "methods": ["GET"],
+                "route": "/"
+            },
+            "backendUri": "https://funcdemomuehan.blob.core.windows.net/client/dist/index.html"
+        },
+        "css": {
+            "matchCondition": {
+                "methods": ["GET"],
+                "route": "/css/{*restOfPath}"
+            },
+            "backendUri": "https://funcdemomuehan.blob.core.windows.net/client/dist/css/{restOfPath}"
+        },
+        "js": {
+            "matchCondition": {
+                "methods": ["GET"],
+                "route": "/js/{*restOfPath}"
+            },
+            "backendUri": "https://funcdemomuehan.blob.core.windows.net/client/dist/js/{restOfPath}"
+        },
+        "img": {
+            "matchCondition": {
+                "methods": ["GET"],
+                "route": "/img/{*restOfPath}"
+            },
+            "backendUri": "https://funcdemomuehan.blob.core.windows.net/client/dist/img/{restOfPath}"
+        }
+    }
+}
