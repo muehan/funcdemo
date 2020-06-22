@@ -56,7 +56,7 @@ export default {
   methods: {
     loadTodos() {
       this.$http
-        .get(process.env.VUE_APP_API_ROOT + "/api/todo")
+        .get(process.env.VUE_APP_API_ROOT + "api/todo")
         .then(response => {
           this.todos = response.body;
         });
@@ -64,7 +64,7 @@ export default {
     submit() {
       if (this.newtodo != "") {
         this.$http
-          .post(process.env.VUE_APP_API_ROOT + "/api/todo", {
+          .post(process.env.VUE_APP_API_ROOT + "api/todo", {
             taskDescription: this.newtodo
           })
           .then(_response => {
@@ -79,7 +79,7 @@ export default {
     update(id, checked) {
       console.log(id + checked);
       this.$http
-          .put(process.env.VUE_APP_API_ROOT + "/api/todo/" + id, {
+          .put(process.env.VUE_APP_API_ROOT + "api/todo/" + id, {
             isCompleted: checked
           })
           .then(_response => {
