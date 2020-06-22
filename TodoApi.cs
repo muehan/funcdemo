@@ -75,6 +75,8 @@ namespace muehan.func
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var updated = JsonConvert.DeserializeObject<ToDoUpdateModel>(requestBody);
 
+            log.LogInformation($"update todo with id: {id}, new isCompleted: {updated.IsCompleted}");
+
             var findOperation = TableOperation.Retrieve<TodoTableEntity>("TODO", id);
             var findResult = await todoTable.ExecuteAsync(findOperation);
 
